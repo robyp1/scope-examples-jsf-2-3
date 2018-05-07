@@ -9,28 +9,28 @@
     <name>scope-examples-jsf-2-3</name>
     <developers>
         <developer>
-            <!--<id>jyeary</id>-->
-            <!--<name>John Yeary</name>-->
-            <!--<email>jyeary@bluelotussoftware.com</email>-->
-            <!--<organization>Blue Lotus Software, LLC.</organization>-->
-            <!--<organizationUrl>http://www.bluelotussoftware.com</organizationUrl>-->
-            <!--<timezone>-5</timezone>-->
-            <!--<url>http://javaevangelist.blogspot.com</url>-->
+            <!--<id></id>-->
+            <!--<name></name>-->
+            <!--<email></email>-->
+            <!--<organization></organization>-->
+            <!--<organizationUrl></organizationUrl>-->
+            <!--<timezone>+1</timezone>-->
+            <!--<url></url>-->
             <roles>
                 <role>principal</role>
             </roles>
         </developer>
     </developers>
-    <!--<inceptionYear>2011</inceptionYear>-->
+    <!--<inceptionYear></inceptionYear>-->
     <!--<organization>-->
-        <!--<name>Blue Lotus Software, LLC.</name>-->
-        <!--<url>http://www.bluelotussoftware.com</url>-->
+        <!--<name></name>-->
+        <!--<url></url>-->
     <!--</organization>-->
 
     <!--<licenses>-->
         <!--<license>-->
-            <!--<name>Apache 2</name>-->
-            <!--<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>-->
+            <!--<name></name>-->
+            <!--<url></url>-->
         <!--</license>-->
     <!--</licenses>-->
 
