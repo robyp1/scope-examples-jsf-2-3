@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+>
+<h:head>
+    <title>Acquista prodotti</title>
+</h:head>
+<h:body>
+    <h:form>
+        <table border="1">
+            <tr>
+                <td>
+                    <h:outputText value="No products available"
+                                  rendered="#{carelloMBean.available.size() == 0}"/>
+                    <h:dataTable id="AvailableProductsTable" value="#{carelloMBean.available}" var="productList" rendered="#{carelloMBean.available.size() > 0}" >
+                        <f:facet name="header">
+                            <h:outputText value="Availables products"/>
+                        </f:facet>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Id"/>
+                            </f:facet>
+                            <h:outputText value="#{productList.productId}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Description"/>
+                            </f:facet>
+                            <h:outputText value="#{productList.tipoProdotto}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Price"/>
+                            </f:facet>
+                            <h:outputText value="#{productList.prezzo}" />
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Add to Cart(Buy)" action="#{carelloMBean.addToCarello(productList.productId)}"/>
+                        </h:column>
+                        <f:facet name="footer">
+                            <h:outputText value="N^ of available products now:"/>
+                            <h:outputText value="Count: #{carelloMBean.available.size()}"/>
+                        </f:facet>
+                    </h:dataTable>
+                </td>
+                <td>
+                    <h:dataTable id="BuyedProductsTable" value="#{carelloMBean.buyed}" var="buyedList">
+                        <f:facet name="header">
+                            <h:outputText value="Products added"/>
+                        </f:facet>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Id"/>
+                            </f:facet>
+                            <h:outputText value="#{buyedList.productId}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Description"/>
+                            </f:facet>
+                            <h:outputText value="#{buyedList.tipoProdotto}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Price"/>
+                            </f:facet>
+                            <h:outputText value="#{buyedList.prezzo}" />
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Remove From Cart" action="#{carelloMBean.removeFromCarello(buyedList.productId)}"/>
+                        </h:column>
+                        <f:facet name="footer">
+                            <h:outputText value="N^ Products added::"/>
+                            <h:outputText value="Count: #{carelloMBean.buyed.size()}"/>
+                        </f:facet>
+                    </h:dataTable>
+                </td>
+            </tr>
+        </table>
+        <h:panelGroup>
+            <!--<h:commandButton value="Reload"/>-->
+            <h:commandButton action="#{carelloMBean.destroy(true)}" value="I want to Buy"/>
+            <h:commandButton action="#{carelloMBean.destroy(false)}" value="Clear Cart"/>
+            <h:commandButton value="Index" action="indexProdotti.xhtml"/>
+        </h:panelGroup>
+
+    </h:form>
+</h:body>
+</html>
+
